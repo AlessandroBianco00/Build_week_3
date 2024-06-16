@@ -1,0 +1,57 @@
+.dnd-theme {
+  background-image: url("../../../assets/builder.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  color: #fff;
+  font-family: "MedievalSharp", cursive;
+  min-height: 87vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dnd-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #800000;
+  color: #fff;
+  border-radius: 10px; /* Leggermente ridotto il bordo */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+}
+
+.dnd-card .card-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.3rem; /* Leggermente ridotta la dimensione del titolo */
+  border-bottom: 1px solid #800000;
+  padding-bottom: 5px;
+}
+
+.dnd-card img {
+  border-bottom: 2px solid #800000;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.dnd-button {
+  background-color: #800000;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.dnd-button:hover {
+  background-color: #a00000;
+  transform: translateY(-2px);
+}

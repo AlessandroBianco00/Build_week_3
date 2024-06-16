@@ -1,0 +1,183 @@
+.dnd-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #800000;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  position: relative;
+  overflow:hidden;
+}
+
+.dnd-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.dnd-card .card-title {
+  font-family: "MedievalSharp", cursive;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #800000;
+  padding-bottom: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.wrapper {
+  transition: all 0.5s;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.dnd-card:hover .wrapper {
+  transform: perspective(900%) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80%;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.dnd-card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.dnd-card:hover .wrapper::after {
+  height: 120px;
+}
+
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  top: 60%;
+  left: -0.7em;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.dnd-card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -100%, 100px);
+}
+
+
+.dnd-button {
+  background-color: #800000;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+  display: block;
+  width: auto;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+.dnd-button:hover {
+  background-color: #a00000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-favorite {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-favorite.favorited {
+  color: red;
+}
+
+.btn-favorite:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+.card-body {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-body::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  transition: border-color 0.3s, transform 0.3s;
+  z-index: 1;
+  transform: scale(0.98);
+}
+
+.dnd-card:hover .card-body::after {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1);
+}
+
+.heart-icon {
+  &.heart-filled {
+    color: red;
+  }
+  &:hover {
+    color: red;
+  }
+}
